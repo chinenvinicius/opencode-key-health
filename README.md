@@ -18,12 +18,20 @@ curl -sSL https://raw.githubusercontent.com/chinenvinicius/opencode-key-health/m
 ```
 
 ## ⌨️ CLI Key Management
-If you've cloned the repository, you can manage keys directly from your terminal:
+If you've cloned the repository (or installed globally via `npm i -g .`), you can manage keys directly from your terminal:
 
 ```bash
-node cli.js add openai my-key sk-xxxx...
-node cli.js list
+# Add a new key
+opencode-keys add <provider> <label> <key>
+# Example: opencode-keys add openai my-key sk-xxxx...
+
+# List all keys
+opencode-keys list
 ```
+
+**Supported Providers:**
+`openai`, `anthropic`, `google`, `gemini`, `morph`, `groq`, `mistral`, `deepseek`, `xai`, `together`, `fireworks`, `openrouter`, `perplexity`, `cohere`, `nvidia`, `ollama`.
+
 
 ## 🛠️ Manual Installation
 Add this to your `opencode.json`:
