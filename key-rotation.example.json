@@ -1,0 +1,28 @@
+{
+    "keys": [
+        {
+            "key": "your-api-key-here",
+            "label": "example-key",
+            "provider": "openai",
+            "envVar": "OPENAI_API_KEY",
+            "enabled": true,
+            "rateLimitResetTime": 0,
+            "consecutiveFailures": 0,
+            "lastUsed": 0,
+            "addedAt": 0,
+            "requestCount": 0,
+            "totalSuccesses": 0,
+            "totalFailures": 0,
+            "healthScore": 100
+        }
+    ],
+    "strategy": "least-recently-used",
+    "defaultCooldownMs": 60000,
+    "capacityCooldownMs": 900000,
+    "maxConsecutiveFailures": 5,
+    "maxRequestsPerKey": 0,
+    "providerMaxRequests": {},
+    "roundRobinIndex": 0,
+    "totalSessionRequests": 0,
+    "startTime": 0
+}
