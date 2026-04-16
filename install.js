@@ -32,9 +32,8 @@ function updateTarget(filePath) {
 console.log("🚀 Installing Opencode Key Health Plugin...");
 
 const paths = [
-    path.join(process.cwd(), 'opencode.json'),
-    path.join(os.homedir(), '.opencode', 'config.json'),
     path.join(os.homedir(), '.config', 'opencode', 'config.json'),
+    path.join(os.homedir(), '.opencode', 'config.json'),
     path.join(os.homedir(), '.opencode.json')
 ];
 
@@ -44,9 +43,13 @@ for (const p of paths) {
 }
 
 if (installedCount === 0) {
-    console.log("⚠️ No opencode.json found in any common locations:");
-    paths.forEach(p => console.log(`   - ${p}`));
-    console.log("\nCreate an opencode.json first or run this from your project root.");
+    console.log("⚠️ No existing Opencode configuration found.");
+    const target = paths[0];
+    console.log(`Setting up new global config at: ${target}`);
+    const parent = path.dirname(target);
+    if (!fs.existsSync(parent)) fs.mkdirSync(parent, { recursive: true });
+    fs.writeFileSync(target, JSON.stringify({ plugin: [PLUGIN_CONF] }, null, 2));
+    console.log("\n🎉 Created new config and installed plugin! Restart Opencode.");
 } else {
     console.log("\n🎉 Installation complete! Restart Opencode to apply changes.");
 }
