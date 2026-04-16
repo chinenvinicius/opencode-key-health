@@ -1,6 +1,8 @@
-# Opencode Key Rotation Plugin (Portable)
+# 🛰️ Opencode Key Health
 
-A self-contained API key rotation system for OpenCode.
+> **Advanced Observability & Intelligent Rotation for Multi-Provider API Ecosystems.**
+
+A high-performance, portable plugin for OpenCode that automates API key lifecycle management, ensuring zero downtime and optimized token consumption across OpenAI, Anthropic, Google, Ollama, and more.
 
 ## Why Portable?
 - **Zero-Config on host**: Config and State files are per-folder by default.
@@ -55,8 +57,11 @@ Add this to your `opencode.json`:
 - `statePath`: (Optional) Absolute path to the state JSON. Defaults to `state.json` inside this folder.
 - `ollamaKeysPath`: (Optional) Path to your `ollama.json` helper file.
 
-## Features
-- **Automatic Rotation**: Switches keys on 429 (Rate Limit) or 403 (Ollama Capacity).
-- **Token Tracking**: Records usage per key and globally.
-- **Health Scoring**: Penalizes keys that fail frequently.
-- **Manual Control**: `key_rotation_status` and more.
+## ✨ Key Highlights
+
+- **🚦 Smart Rotation**: Instantly pivots to healthy keys upon detecting `429` (Rate Limit) or `403` (Ollama Capacity) errors.
+- **📊 Granular Analytics**: Track token consumption and request density across Hourly, Daily, and Monthly buckets.
+- **🛡️ Circuit Breaking**: Automatically sidelines keys with consecutive failures to protect your workflow’s stability.
+- **🎯 Strategy Control**: Choose between `round-robin`, `least-recently-used`, `random`, or `health-first` selection logic.
+- **🔌 Zero-Footprint Portability**: Moves with your project. No global dependencies required.
+

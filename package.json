@@ -1,7 +1,7 @@
 {
     "name": "opencode-plugin-key-rotation",
     "version": "1.0.0",
-    "description": "Smart API key rotation for Opencode with usage tracking and health scoring.",
+    "description": "Advanced Observability & Intelligent Rotation for Multi-Provider API Ecosystems.",
     "main": "index.ts",
     "type": "module",
     "dependencies": {
