@@ -7,9 +7,25 @@ A self-contained API key rotation system for OpenCode.
 - **Project-Specific**: You can have different sets of keys for different workspaces/folders.
 - **Easy Deployment**: Just clone this folder and point to it in your `opencode.json`.
 
-## Installation
+## 🚀 Quick Install
 
-Add the absolute path of this directory to your `.opencode/config.json` (or any workspace `opencode.json`):
+Add this to your `opencode.json` (root or workspace):
+
+```json
+{
+  "plugin": [
+    ["https://github.com/chinenvinicius/opencode-key-health.git", {
+      "ollamaKeysPath": "~/ollama.json"
+    }]
+  ]
+}
+```
+
+## 🛠️ Local Installation (Development)
+
+1. Clone this repository anywhere:
+   `git clone https://github.com/chinenvinicius/opencode-key-health.git`
+2. Add the absolute path to your `.opencode/config.json`:
 
 ```json
 {
