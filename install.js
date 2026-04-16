@@ -4,7 +4,7 @@ const path = require('path');
 const os = require('os');
 
 const GIT_URL = "https://github.com/chinenvinicius/opencode-key-health.git";
-const PLUGIN_CONF = [GIT_URL, { "ollamaKeysPath": "~/ollama.json" }];
+const PLUGIN_CONF = [GIT_URL, {}];
 
 function updateTarget(filePath) {
     if (!fs.existsSync(filePath)) return false;

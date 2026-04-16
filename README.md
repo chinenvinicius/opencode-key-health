@@ -21,9 +21,7 @@ Add this to your `opencode.json`:
 ```json
 {
   "plugin": [
-    ["https://github.com/chinenvinicius/opencode-key-health.git", {
-      "ollamaKeysPath": "~/ollama.json"
-    }]
+    ["https://github.com/chinenvinicius/opencode-key-health.git", {}]
   ]
 }
 ```
@@ -38,8 +36,7 @@ Add this to your `opencode.json`:
 {
   "plugin": [
     ["/path/to/opencode-key-rotation", {
-      "configPath": "/path/to/custom/keys.json",
-      "ollamaKeysPath": "~/ollama.json"
+      "configPath": "/path/to/custom/keys.json"
     }]
   ]
 }
