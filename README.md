@@ -14,9 +14,9 @@ Add the absolute path of this directory to your `.opencode/config.json` (or any 
 ```json
 {
   "plugin": [
-    ["/home/chinen/.gemini/antigravity/scratch/opencode-key-rotation-plugin", {
+    ["/path/to/opencode-key-rotation", {
       "configPath": "/path/to/custom/keys.json",
-      "ollamaKeysPath": "/home/chinen/ollama.json"
+      "ollamaKeysPath": "~/ollama.json"
     }]
   ]
 }

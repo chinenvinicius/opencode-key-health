@@ -394,6 +394,7 @@ export const KeyRotationServer: Plugin = async ({ client, directory }, options: 
         tool: {
             key_rotation_status: tool({
                 description: "Status of keys and usage",
+                args: {},
                 async execute() {
                     const cfg = loadKeysConfig();
                     let res = `## Key Rotation (Portable)\nConfig: ${KEYS_FILE}\nStrategy: ${cfg.strategy}\n\n`;
