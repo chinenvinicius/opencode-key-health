@@ -49,7 +49,21 @@ if (installedCount === 0) {
     const parent = path.dirname(target);
     if (!fs.existsSync(parent)) fs.mkdirSync(parent, { recursive: true });
     fs.writeFileSync(target, JSON.stringify({ plugin: [PLUGIN_CONF] }, null, 2));
+
+    // Also create the keys file in the same directory
+    const keysFile = path.join(parent, 'key-rotation.json');
+    if (!fs.existsSync(keysFile)) {
+        fs.writeFileSync(keysFile, JSON.stringify({ keys: [], strategy: "round-robin" }, null, 2));
+    }
+
     console.log("\n🎉 Created new config and installed plugin! Restart Opencode.");
 } else {
+    // For existing configs, ensure the keys file exists in the directory of the first config found
+    const targetDir = path.dirname(paths.find(p => fs.existsSync(p)));
+    const keysFile = path.join(targetDir, 'key-rotation.json');
+    if (!fs.existsSync(keysFile)) {
+        fs.writeFileSync(keysFile, JSON.stringify({ keys: [], strategy: "round-robin" }, null, 2));
+        console.log(`📄 Created initial keys file at ${keysFile}`);
+    }
     console.log("\n🎉 Installation complete! Restart Opencode to apply changes.");
 }
