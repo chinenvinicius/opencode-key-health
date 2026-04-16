@@ -1,8 +1,19 @@
 #!/usr/bin/env node
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import os from 'os';
+import { fileURLToPath } from 'url';
 
-const CONFIG_FILE = path.join(__dirname, 'key-rotation.json');
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+const paths = [
+    path.join(__dirname, 'key-rotation.json'),
+    path.join(os.homedir(), '.config', 'opencode', 'key-rotation.json'),
+    path.join(os.homedir(), '.opencode', 'key-rotation.json'),
+    path.join(os.homedir(), '.opencode', 'key-rotation.json')
+];
+
+let CONFIG_FILE = paths.find(p => fs.existsSync(p)) || paths[1];
 
 function loadConfig() {
     if (!fs.existsSync(CONFIG_FILE)) {
