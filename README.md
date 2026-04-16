@@ -15,6 +15,14 @@ Run this in your terminal to automatically add the plugin to your config:
 curl -sSL https://raw.githubusercontent.com/chinenvinicius/opencode-key-health/main/install.js | node
 ```
 
+## ⌨️ CLI Key Management
+If you've cloned the repository, you can manage keys directly from your terminal:
+
+```bash
+node cli.js add openai my-key sk-xxxx...
+node cli.js list
+```
+
 ## 🛠️ Manual Installation
 Add this to your `opencode.json`:
 
