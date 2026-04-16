@@ -7,9 +7,16 @@ A self-contained API key rotation system for OpenCode.
 - **Project-Specific**: You can have different sets of keys for different workspaces/folders.
 - **Easy Deployment**: Just clone this folder and point to it in your `opencode.json`.
 
-## 🚀 Quick Install
+## 🚀 Quick Install (One-Liner)
 
-Add this to your `opencode.json` (root or workspace):
+Run this in your terminal to automatically add the plugin to your config:
+
+```bash
+curl -sSL https://raw.githubusercontent.com/chinenvinicius/opencode-key-health/main/install.js | node
+```
+
+## 🛠️ Manual Installation
+Add this to your `opencode.json`:
 
 ```json
 {
